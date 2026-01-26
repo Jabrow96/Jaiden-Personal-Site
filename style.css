@@ -54,8 +54,9 @@ section h2{
 .about-inner{
   display:flex;
   gap:1rem;
-  align-items:flex-start;
+  align-items:center; /* vertically center text with the image */
 }
+.about-text{display:flex;align-items:center}
 .about-img{
   width:320px; /* doubled size */
   height:320px;
@@ -194,6 +195,16 @@ section h2{
 
 /* Projects */
 .project{margin-bottom:1rem;padding:1rem;border-radius:6px;background:#090909}
+.project img{max-width:100%;height:auto;border-radius:6px}
+
+/* Make the three images in Project 1 a uniform size on larger screens */
+#projects .project:first-of-type img{
+  width:320px;
+  height:200px;
+  object-fit:cover;
+  display:inline-block;
+  margin-right:0.6rem;
+}
 .project h3{margin-top:0}
 
 /* Contact */
@@ -208,4 +219,9 @@ footer{text-align:center;padding:1rem;background:linear-gradient(90deg,#070707,v
   .skills-grid{flex-direction:column}
   .skill-img{width:120px;height:78px}
   .skill-caption{min-width:120px}
+}
+
+@media (max-width:520px){
+  /* stack project images full width on small screens */
+  #projects .project:first-of-type img{width:100%;height:auto;margin-right:0;margin-bottom:0.5rem}
 }
