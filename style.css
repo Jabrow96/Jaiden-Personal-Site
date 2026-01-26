@@ -1,96 +1,134 @@
+:root{
+  --bg: #000000; /* black */
+  --paper: #0f0f10; /* slightly lighter than black for cards */
+  --maroon: #7a0b0b;
+  --white: #ffffff;
+  --muted: #cfcfcf;
+}
+
 /* Basic reset and body styling */
+*{box-sizing:border-box}
 body {
-  font-family: Arial, sans-serif; /* Clean, modern font */
-  line-height: 1.6; /* Better readability */
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
   margin: 0;
   padding: 0;
-  color: #333; /* Dark text for contrast */
-  background-color: #f4f4f4; /* Light background */
+  color: var(--white);
+  background-color: var(--bg);
 }
 
-/* Header styling */
-header {
-  background-color: #333; /* Dark header */
-  color: white;
-  padding: 1rem;
+/* Header */
+header{
+  background: linear-gradient(90deg,var(--paper),#070707);
+  color: var(--white);
+  padding: 1rem 1.25rem;
   text-align: center;
+  border-bottom: 4px solid var(--maroon);
 }
 
-header h1 {
-  margin: 0;
+header h1{margin:0}
+
+nav ul{list-style:none;padding:0;margin:0.5rem 0 0 0}
+nav li{display:inline;margin:0 0.8rem}
+nav a{color:var(--muted);text-decoration:none}
+nav a:hover{color:var(--white);text-decoration:underline}
+
+/* Sections use dark "paper" cards to stand off the black background */
+section{
+  max-width:1000px;
+  margin:2rem auto;
+  padding:1rem 1.25rem;
+  background-color:var(--paper);
+  border-radius:8px;
+  border:1px solid rgba(122,11,11,0.15);
 }
 
-/* Navigation menu */
-nav ul {
-  list-style: none; /* Remove bullet points */
-  padding: 0;
-  margin: 1rem 0 0 0;
+section h2{
+  color:var(--maroon);
+  margin-top:0;
+  padding-bottom:0.4rem;
+  border-bottom:2px solid rgba(122,11,11,0.12);
 }
 
-nav li {
-  display: inline; /* Horizontal menu */
-  margin: 0 1rem;
+/* Skills grid and cards */
+.skills-grid{
+  display:flex;
+  gap:1rem;
+  flex-wrap:wrap;
+  margin-top:1rem;
 }
 
-nav a {
-  color: white;
-  text-decoration: none; /* Remove underline */
+.skill-card{
+  display:flex;
+  align-items:center;
+  gap:1rem;
+  background:transparent;
+  padding:0.25rem 0.25rem;
+  border-radius:6px;
 }
 
-nav a:hover {
-  text-decoration: underline; /* Add underline on hover */
+.skill-btn{
+  background:var(--maroon);
+  color:var(--white);
+  border:none;
+  padding:0.6rem 1rem;
+  font-size:1rem;
+  border-radius:6px;
+  cursor:pointer;
+  box-shadow:0 4px 10px rgba(122,11,11,0.25);
 }
 
-/* Section styling */
-section {
-  max-width: 800px; /* Limit width for readability */
-  margin: 2rem auto; /* Center the sections */
-  padding: 1rem;
-  background-color: white; /* White background for sections */
-  border-radius: 5px; /* Slight rounding for modern look */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+.skill-btn:focus{outline:2px solid rgba(255,255,255,0.12)}
+
+/* Preview hidden by default, appears on hover of the card */
+.skill-preview{
+  display:flex;
+  align-items:center;
+  gap:0.75rem;
+  opacity:0;
+  transform:translateY(4px);
+  transition:opacity 220ms ease, transform 220ms ease;
+  pointer-events:none;
 }
 
-section h2 {
-  color: #333;
-  border-bottom: 2px solid #333; /* Underline for headings */
-  padding-bottom: 0.5rem;
+.skill-card:hover .skill-preview,
+.skill-card:focus-within .skill-preview{
+  opacity:1;
+  transform:translateY(0);
+  pointer-events:auto;
 }
 
-/* Skills list */
-#skills ul {
-  list-style: none; /* Remove bullets */
-  padding: 0;
+.skill-img{
+  width:140px;
+  height:90px;
+  object-fit:cover;
+  border:3px solid var(--maroon);
+  border-radius:6px;
+  background:var(--white);
 }
 
-#skills li {
-  background-color: #f4f4f4; /* Light background for skills */
-  margin: 0.5rem 0;
-  padding: 0.5rem;
-  border-radius: 3px;
+.skill-caption{
+  background:var(--white);
+  color:#111;
+  padding:0.5rem 0.6rem;
+  border-radius:6px;
+  min-width:160px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.5);
 }
 
-/* Projects styling */
-.project {
-  margin-bottom: 1rem;
-  padding: 1rem;
-  border: 1px solid #ddd; /* Light border */
-  border-radius: 5px;
-}
+/* Projects */
+.project{margin-bottom:1rem;padding:1rem;border-radius:6px;background:#090909}
+.project h3{margin-top:0}
 
-.project h3 {
-  margin-top: 0;
-}
+/* Contact */
+#contact p{margin:0.5rem 0}
 
-/* Contact section */
-#contact p {
-  margin: 0.5rem 0;
-}
+/* Footer */
+footer{text-align:center;padding:1rem;background:linear-gradient(90deg,#070707,var(--paper));color:var(--muted);border-top:3px solid var(--maroon)}
 
-/* Footer styling */
-footer {
-  text-align: center;
-  padding: 1rem;
-  background-color: #333;
-  color: white;
+/* Responsive adjustments */
+@media (max-width:700px){
+  .skills-grid{flex-direction:column}
+  .skill-img{width:120px;height:78px}
+  .skill-caption{min-width:120px}
 }

@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline';">
   <title>My Personal Site</title>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -30,12 +31,31 @@
   <!-- Skills section -->
   <section id="skills">
     <h2>Skills</h2>
-    <ul>
-      <li>HTML</li>
-      <li>CSS</li>
-      <li>JavaScript</li>
-      <!-- Add more skills as you learn -->
-    </ul>
+    <div class="skills-grid">
+      <div class="skill-card" data-skill="html">
+        <button class="skill-btn">HTML</button>
+        <div class="skill-preview">
+          <img src="img/html1.svg" class="skill-img" alt="HTML preview">
+          <div class="skill-caption">HTML structure</div>
+        </div>
+      </div>
+
+      <div class="skill-card" data-skill="css">
+        <button class="skill-btn">CSS</button>
+        <div class="skill-preview">
+          <img src="img/css1.svg" class="skill-img" alt="CSS preview">
+          <div class="skill-caption">Styling with CSS</div>
+        </div>
+      </div>
+
+      <div class="skill-card" data-skill="js">
+        <button class="skill-btn">JavaScript</button>
+        <div class="skill-preview">
+          <img src="img/js1.svg" class="skill-img" alt="JavaScript preview">
+          <div class="skill-caption">Interactive scripts</div>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- Projects section -->
@@ -67,5 +87,6 @@
   <footer>
     <p>&copy; 2026 My Name. All rights reserved.</p>
   </footer>
+  <script src="script.js"></script>
 </body>
 </html>

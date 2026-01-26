@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="240" viewBox="0 0 400 240">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <rect x="12" y="12" width="376" height="216" rx="8" fill="#7a0b0b"/>
+  <rect x="40" y="70" width="60" height="60" fill="#fff"/>
+  <text x="120" y="100" font-family="Arial" font-size="22" fill="#fff">Colors & Type</text>
+</svg>
