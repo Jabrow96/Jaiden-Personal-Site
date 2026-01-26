@@ -26,7 +26,7 @@ header{
   border-bottom: 4px solid var(--maroon);
 }
 
-header h1{margin:0}
+header h1{margin:0; -webkit-text-stroke: .45px var(--bg);}
 
 nav ul{list-style:none;padding:0;margin:0.5rem 0 0 0}
 nav li{display:inline;margin:0 0.8rem}
@@ -40,14 +40,15 @@ section{
   padding:1rem 1.25rem;
   background-color:var(--paper);
   border-radius:8px;
-  border:1px solid rgba(122,11,11,0.15);
+  border:2px solid rgba(122,11,11,0.22);
 }
 
 section h2{
-  color:var(--maroon);
+  color:var(--white);
   margin-top:0;
   padding-bottom:0.4rem;
   border-bottom:2px solid rgba(122,11,11,0.12);
+  -webkit-text-stroke: .75px var(--maroon);
 }
 
 /* About section layout */
@@ -209,7 +210,7 @@ section h2{
   display:inline-block;
   margin-right:0.6rem;
 }
-.project h3{margin-top:0}
+.project h3{margin-top:0;text-decoration:underline;text-decoration-color:var(--maroon);text-decoration-thickness:2px}
 
 /* Contact */
 #contact{ text-align:left }
