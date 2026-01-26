@@ -57,20 +57,45 @@ section h2{
   align-items:flex-start;
 }
 .about-img{
-  width:160px;
-  height:160px;
+  width:320px; /* doubled size */
+  height:320px;
   object-fit:cover;
   border-radius:8px;
   border:3px solid rgba(122,11,11,0.12);
   box-shadow:0 8px 20px rgba(0,0,0,0.6);
-  flex:0 0 160px;
+  flex:0 0 320px;
 }
-.about-text p{margin:0}
+.about-text p{margin:0; text-align:center}
 
 @media (max-width:700px){
   .about-inner{flex-direction:column;align-items:center;text-align:center}
-  .about-img{width:140px;height:140px;flex:0 0 140px}
+  .about-img{width:160px;height:160px;flex:0 0 160px}
 }
+
+/* Contact buttons */
+.contact-buttons{
+  display:flex;
+  gap:0.75rem;
+  flex-wrap:wrap;
+  margin-top:0.5rem;
+  justify-content:center; /* center the row of buttons */
+  align-items:center;
+}
+.contact-btn{
+  display:inline-flex;
+  flex-direction:column; /* icon above, text below */
+  align-items:center;
+  gap:0.35rem;
+  background:var(--maroon);
+  color:var(--white);
+  padding:0.5rem 0.75rem;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:600;
+  box-shadow:0 6px 18px rgba(122,11,11,0.25);
+}
+.contact-btn:hover{transform:translateY(-3px)}
+.contact-icon{width:28px;height:28px;display:inline-block}
 
 /* Skills grid and cards */
 .skills-grid{
@@ -172,7 +197,8 @@ section h2{
 .project h3{margin-top:0}
 
 /* Contact */
-#contact p{margin:0.5rem 0}
+#contact{ text-align:left }
+#contact p{margin:0.5rem 0; text-align:center}
 
 /* Footer */
 footer{text-align:center;padding:1rem;background:linear-gradient(90deg,#070707,var(--paper));color:var(--muted);border-top:3px solid var(--maroon)}
