@@ -44,6 +44,8 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  /* small gap between header content and navigation */
+  gap: 0.5rem;
 }
 
 /* make the main heading stand out larger than section titles */
@@ -66,12 +68,16 @@ header::before {
 
 .header-content {
   display: flex;
+  /* stack elements vertically so the name stays centered above the animation */
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 2rem;
   position: relative;
   z-index: 1;
   flex-wrap: wrap;
+  /* removed bottom margin; spacing now handled by header gap */
+  margin-bottom: 0;
 }
 
 .header-canvas {
@@ -86,12 +92,18 @@ header::before {
 nav ul {
   list-style: none;
   padding: 0;
-  margin: 1.5rem 0 0 0;
+  /* reset margin; spacing now controlled by header-content */
+  margin: 0;
   display: flex;
   justify-content: center;
   gap: 2rem;
   position: relative;
   z-index: 1;
+}
+
+/* move nav upward to reduce gap from title */
+nav {
+  margin-top: -1rem;
 }
 
 nav li {
@@ -140,14 +152,14 @@ section {
   backdrop-filter: blur(20px);
   border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
   position: relative;
   overflow: hidden;
   transition: all 0.3s ease;
 }
 
 section:hover {
-  box-shadow: 0 30px 60px #C9A46A;
+  box-shadow: 0 0 40px #C9A46A;
   border-color: #C9A46A;
 }
 
@@ -217,16 +229,6 @@ section h2::after {
   line-height: 1.8;
   margin: 0;
   color: var(--muted);
-}
-
-/* removed drop cap styling so first letters are not oversized */
-.about-text p:first-letter {
-  font-size: 1.2rem; /* normal size matching paragraphs */
-  font-weight: inherit;
-  color: inherit;
-  float: none;
-  margin: 0;
-  line-height: 1.6;
 }
 
 @media (max-width:700px){
@@ -392,6 +394,14 @@ section h2::after {
   padding-bottom: 0;
 }
 
+#skills p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+  color: var(--muted);
+  text-align: center;
+}
+
 .skill-card{
   position:relative;
   width:100%;
@@ -474,6 +484,7 @@ section h2::after {
   position:absolute;
   left:0; /* align under the tile */
   top:100%; /* sit directly below the tile */
+  margin-top:0.25rem; /* small gap between skill and caption */
   background:var(--white);
   color:#111;
   padding:0.75rem;
@@ -631,6 +642,15 @@ footer {
   .about-img {
     max-width: 300px;
     height: 300px;
+  }
+
+  .about-text {
+    height: auto;
+    padding: 1.5rem;
+  }
+
+  .about-text p {
+    font-size: 1rem;
   }
 
   .skills-grid {
