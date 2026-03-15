@@ -108,16 +108,41 @@ document.addEventListener('DOMContentLoaded', function () {
   // Enhanced skills interaction
   const slides = {
     html: [
+      { src: 'img/Website HTML.png', caption: 'Sample HTML' },
       { src: 'img/html-structure.png', caption: 'HTML Structure' },
       { src: 'img/semantic.png', caption: 'Semantic Elements' }
     ],
     css: [
+      { src: 'img/Website CSS.png', caption: 'Sample CSS' },
       { src: 'img/css_box_model.png', caption: 'Box Model & Layouts' },
       { src: 'img/power-of-colour-in-typography.png', caption: 'Colors & Typography' }
     ],
     js: [
+      { src: 'img/Website Javascript.png', caption: 'Sample JavaScript' },
       { src: 'img/dom.png', caption: 'DOM Manipulation' },
       { src: 'img/Event.jpg', caption: 'Events & Interactivity' }
+    ],
+    CAD: [
+      { src: 'img/CubeAssem.png', caption: 'Puzzle Cube Assembly' },
+      { src: 'img/CubeDrawing.png', caption: 'Puzzle Cube Drawing' }
+    ],
+    GD: [
+      { src: 'img/(LQ) Port of Call.jpg', caption: 'Mystical Port Concept' },
+      { src: 'img/fcc-poster_mockup_palette-2.jpg', caption: 'Poster Mockup of Icons' }
+    ],
+    Adobe: [
+      { src: 'img/CP1_Brown.jpg', caption: 'Photoshop: Honda Motorcycle Ad' },
+      { src: 'img/Poster-GShock.gif', caption: 'Illustrator: GShock Poster Concept' },
+      { src: 'img/3.1 - Copying the Masters.png', caption: 'InDesign: Recreation of Typography' }
+    ],
+    Microsoft: [
+      { src: 'img/Word.png', caption: 'Honda Ad Document' },
+      { src: 'img/Excel.png', caption: 'Survey Data Spreadsheet' },
+      { src: 'img/Presentation.png', caption: 'Usability Assessment Presentation' }
+    ],
+    Model: [
+      { src: 'img/Print1.JPG', caption: '3D Printing Model' },
+      { src: 'img/PSModel.jpg', caption: 'PS Logo Model Comparison' }
     ]
   };
 

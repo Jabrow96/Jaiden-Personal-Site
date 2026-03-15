@@ -215,7 +215,6 @@ section h2::after {
   border-radius: 15px;
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  height: 400px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -228,7 +227,7 @@ section h2::after {
   color: var(--muted);
 }
 
-@media (max-width:700px){
+@media (max-width:768px){
   .about-inner{display:flex;flex-direction:column;align-items:center;text-align:center;gap:1.5rem}
   .about-img{width:280px;height:280px;flex:0 0 280px}
 }
@@ -395,7 +394,7 @@ section h2::after {
 /* Skills grid and cards */
 .skills-grid{
   display:grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap:1rem;
   margin-top:1rem;
   overflow: visible; /* allow caption bubbles to overflow without pushing layout */
@@ -627,8 +626,13 @@ footer {
   }
 
   .skills-grid {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
+  }
+
+  .skill-caption {
+    padding: 0.5rem;
+    font-size: 0.9rem;
   }
 
   .contact-container {
@@ -660,7 +664,12 @@ footer {
   }
 
   .skills-grid {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .skill-caption {
+    padding: 0.4rem;
+    font-size: 0.8rem;
   }
 
   .contact-buttons {
